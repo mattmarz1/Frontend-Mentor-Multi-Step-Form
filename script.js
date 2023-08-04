@@ -154,6 +154,12 @@ nextBtnElsExceptFirst.forEach((btn, i) => {
   });
 });
 
+inputFieldEls.forEach((el) => {
+  if (el.value.trim() === "") {
+    setProperty(stepContainerUl, "pointer-events", "none");
+  }
+});
+
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
