@@ -204,7 +204,7 @@ button {
   margin-left: 0;
 }
 
-/* Form Container 1 Styles */
+/* page-container-personal-info Styles */
 
 form {
   margin-top: 3rem;
@@ -244,7 +244,7 @@ label:not(.toggle-switch) {
   outline: none;
 }
 
-/* Form Container 2 Styles */
+/* page-container-plan Styles */
 
 .plan-type-container {
   margin-top: 4rem;
@@ -353,7 +353,7 @@ label:not(.toggle-switch) {
   color: var(--marine-blue);
 }
 
-/* Form Container 3 Styles */
+/* page-container-addons Styles */
 
 .addons-container {
   margin-top: 3rem;
@@ -397,7 +397,7 @@ label:not(.toggle-switch) {
   color: var(--purplish-blue);
 }
 
-/* Form Container 4 Styles */
+/* page-container-summary Styles */
 
 .summary-container {
   margin-top: 3rem;
