@@ -1,0 +1,570 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,700&display=swap");
+
+:root {
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --marine-blue: hsl(213, 96%, 18%);
+  --magnolia: hsl(217, 100%, 97%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  --font-size-extra-small: 1.1rem;
+  --font-size-small: 1.2rem;
+  --font-size-medium: 1.3rem;
+  --font-size-large: 1.4rem;
+  --font-size-larger: 1.8rem;
+  --font-size-extra-large: 2.5rem;
+
+  --font-weight-thin: 100;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--magnolia);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+  padding-top: 3.5rem;
+  margin-left: 3rem;
+}
+
+ul li {
+  gap: 1.5rem;
+}
+
+ul li:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
+ul li p {
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--white);
+  letter-spacing: 0.2rem;
+}
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-thin);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: var(--light-gray);
+}
+
+ul li,
+main,
+.container,
+.step,
+.page-container,
+.plan-type-container,
+.navigation-buttons-container,
+form,
+.form-label-container,
+.payment-plan-container,
+.addons-container,
+.content-container,
+.summary-container-top,
+.summary-container-bottom,
+.summary-addon-type-container,
+.summary-addon-cost-container,
+.order-total-container {
+  display: flex;
+}
+
+main,
+.step,
+.payment-plan-container,
+.page-container-thankyou {
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container,
+form,
+.addons-container,
+.summary-addon-type-container,
+.summary-addon-cost-container {
+  flex-direction: column;
+}
+
+.page-container-personal-info button,
+.input-field-error-message,
+.addon-cost,
+.summary-cost,
+.summary-addon-cost-container,
+.order-total-container p:last-child {
+  margin-left: auto;
+}
+
+main {
+  height: 100%;
+  padding: 2rem;
+}
+
+.container {
+  height: 60rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 90rem;
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 5rem -5rem black;
+}
+
+.page-container {
+  margin-top: 4rem;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 40rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: var(--marine-blue);
+  color: white;
+  padding-block: 1.2rem;
+  padding-inline: 2rem;
+  border-radius: 0.7rem;
+  font-size: var(--font-size-medium);
+  font-family: inherit;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: normal;
+}
+
+.page-heading {
+  font-size: var(--font-size-extra-large);
+  margin-bottom: 1rem;
+  color: var(--marine-blue);
+}
+
+.page-description {
+  font-size: var(--font-size-large);
+  color: var(--cool-gray);
+}
+
+.step-container {
+  width: 28.3rem;
+  background-image: url("/assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.step-container .step {
+  font-size: var(--font-size-medium);
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+
+.step-container .active {
+  background-color: var(--white);
+}
+
+.step-container .step:not(.active) {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.navigation-buttons-container {
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.back-btn {
+  background-color: initial;
+  color: var(--cool-gray);
+}
+
+.back-btn:hover {
+  color: var(--marine-blue);
+  font-weight: var(--font-weight-medium);
+}
+
+.page-container:not(.page-container-personal-info) button {
+  margin-left: 0;
+}
+
+/* Form Container 1 Styles */
+
+form {
+  margin-top: 3rem;
+  gap: 2rem;
+  height: 100%;
+}
+
+.input-field-error-message {
+  font-size: var(--font-size-small);
+}
+
+.input-field-error-message {
+  color: var(--strawberry-red);
+  font-weight: var(--font-weight-medium);
+}
+
+label:not(.toggle-switch) {
+  font-size: var(--font-size-large);
+  margin-bottom: 0.7rem;
+  color: var(--marine-blue);
+}
+
+.page-container-personal-info input {
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--light-gray);
+  display: block;
+  width: 100%;
+}
+
+.page-container-personal-info input::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  user-select: none;
+}
+
+.page-container-personal-info input:focus {
+  outline: none;
+}
+
+/* Form Container 2 Styles */
+
+.plan-type-container {
+  margin-top: 4rem;
+  gap: 1.5rem;
+}
+
+.plan-type-container .plan {
+  border: 1px solid var(--light-blue);
+  width: 11.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.plan-type-container .plan img {
+  height: 3.5rem;
+}
+
+.plan-type-container .plan div {
+  margin-top: 4rem;
+}
+
+.plan-type {
+  color: var(--marine-blue);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 0.5rem;
+}
+
+.plan-cost {
+  font-size: var(--font-size-medium);
+  color: var(--cool-gray);
+}
+
+.active-plan {
+  border: 1px solid var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+
+.plan-type-container .plan:hover {
+  border: 1px solid var(--purplish-blue);
+}
+
+.payment-plan-container {
+  gap: 1.7rem;
+  margin-top: 2rem;
+  background-color: var(--magnolia);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.payment-plan-container p {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.payment-plan-container p:not(.active-payment-plan) {
+  color: var(--cool-gray);
+}
+
+.text-content p:last-child {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  display: none;
+  color: var(--marine-blue);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.3rem;
+  height: 1.8rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--marine-blue);
+  transition: 0.4s;
+  border-radius: 2rem;
+}
+
+.toggle {
+  position: absolute;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  left: 0.4rem;
+  top: 0.4rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.active-payment-plan {
+  color: var(--marine-blue);
+}
+
+/* Form Container 3 Styles */
+
+.addons-container {
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.addon {
+  border: 1px solid var(--light-blue);
+  padding: 1.7rem;
+  border-radius: 0.5rem;
+}
+
+.addon:hover {
+  border: 1px solid var(--purplish-blue);
+  cursor: pointer;
+}
+
+.content-container input {
+  margin-right: 2rem;
+  height: 2.5rem;
+  width: 1.5rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+.page-container-addons .addon-type {
+  font-size: var(--font-size-large);
+  margin-bottom: 0.5rem;
+  color: var(--marine-blue);
+  font-weight: var(--font-weight-medium);
+}
+
+.addon-description {
+  font-size: var(--font-size-medium);
+  color: var(--cool-gray);
+}
+
+.addon-cost {
+  align-self: center;
+  font-size: var(--font-size-medium);
+  color: var(--purplish-blue);
+}
+
+/* Form Container 4 Styles */
+
+.summary-container {
+  margin-top: 3rem;
+  background-color: var(--magnolia);
+  border-radius: 0.5rem;
+  padding-inline: 2rem;
+}
+
+.summary-container p {
+  font-size: var(--font-size-large);
+}
+
+.page-container-summary :is(.summary-container-top, .summary-container-bottom) {
+  padding-block: 2rem;
+}
+
+.summary-container-top {
+  border-bottom: 1px solid var(--light-gray);
+}
+.selected-plan-type {
+  color: var(--marine-blue);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 0.5rem;
+}
+
+.change-plan {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+  color: var(--cool-gray);
+}
+
+.change-plan:hover {
+  color: var(--purplish-blue);
+}
+
+.summary-cost {
+  align-self: center;
+  color: var(--marine-blue);
+  font-weight: 600;
+}
+
+.page-container-summary .addon-type {
+  color: var(--cool-gray);
+}
+
+.summary-addon-cost {
+  color: var(--marine-blue);
+}
+
+.page-container-summary :is(.summary-addon-type-container, .summary-addon-cost-container) {
+  gap: 15px;
+}
+
+.order-total-container {
+  margin-top: 3rem;
+  padding-inline: 2rem;
+}
+
+.order-total-container p {
+  font-size: var(--font-size-large);
+  color: var(--cool-gray);
+}
+
+.order-total-container p:last-child {
+  font-size: var(--font-size-larger);
+  color: var(--purplish-blue);
+  font-weight: var(--font-weight-bold);
+}
+
+.confirm-btn {
+  background-color: var(--purplish-blue);
+  width: 100%;
+  width: 10.5rem;
+}
+
+.confirm-btn:hover {
+  opacity: 0.5;
+}
+
+.page-container:not(.page-container-personal-info) {
+  display: none;
+}
+
+.page-container-thankyou div {
+  text-align: center;
+  max-width: 85%;
+}
+
+.page-container-thankyou div h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page-container-thankyou div p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: var(--cool-gray);
+}
+
+.page-container-thankyou div img {
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+  main {
+    padding: 0;
+  }
+
+  ul {
+    display: flex;
+    padding-top: 0;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 0;
+    border-radius: initial;
+    height: 100%;
+    background-color: var(--magnolia);
+  }
+
+  .step-container {
+    background-image: url("/assets/images/bg-sidebar-mobile.svg");
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+  }
+
+  .step-container p,
+  .step-container h6 {
+    display: none;
+  }
+
+  ul li:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .page-container {
+    margin-top: -100px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px -50px black;
+  }
+
+  .navigation-buttons-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    padding-block: 20px;
+  }
+
+  button {
+    margin-bottom: initial;
+    touch-action: manipulation;
+  }
+
+  .next-btn,
+  .confirm-btn {
+    margin-right: 20px;
+  }
+}
