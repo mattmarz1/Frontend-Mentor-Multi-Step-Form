@@ -154,7 +154,6 @@ nextBtnElsExceptFirst.forEach((btn, i) => {
   });
 });
 
-
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -164,8 +163,10 @@ formEl.addEventListener("submit", function (e) {
     if (el.value.trim() === "") {
       inputFieldErrorEls[index].innerHTML = "This field is required";
       shouldContinue = false;
+      setProperty(stepContainerUl, "pointer-events", "none");
     } else {
       inputFieldErrorEls[index].innerHTML = "";
+      setProperty(stepContainerUl, "pointer-events", "auto");
     }
   });
 
@@ -311,5 +312,5 @@ confirmBtnEl.addEventListener("click", function () {
   setProperty(pageContainers[curPageIndex], "display", "none");
   setProperty(pageContainers[curPageIndex + 1], "display", "flex");
 
-  stepContainerUl.style.pointerEvents = "none";
+  setProperty(stepContainerUl, "pointer-events", "none");
 });
