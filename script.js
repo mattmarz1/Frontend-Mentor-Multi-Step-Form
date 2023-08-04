@@ -5,7 +5,7 @@ const formEl = document.querySelector(".page-container-personal-info form");
 
 const stepEls = document.querySelectorAll(".step");
 const stepContainerUl = document.querySelector(".step-container ul");
-const inputFieldEls = document.querySelectorAll(".form-container-1 input");
+const inputFieldEls = document.querySelectorAll(".page-container-personal-info input");
 const inputFieldErrorEls = document.querySelectorAll(".input-field-error-message");
 
 const planTypeContainer = document.querySelector(".plan-type-container");
@@ -153,6 +153,7 @@ nextBtnElsExceptFirst.forEach((btn, i) => {
     }
   });
 });
+
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
