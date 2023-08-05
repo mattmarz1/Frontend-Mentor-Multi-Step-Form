@@ -410,7 +410,7 @@ label:not(.toggle-switch) {
   font-size: var(--font-size-large);
 }
 
-.page-container-summary :is(.summary-container-top, .summary-container-bottom) {
+.summary-container-top, .summary-container-bottom {
   padding-block: 2rem;
 }
 
@@ -448,7 +448,8 @@ label:not(.toggle-switch) {
   color: var(--marine-blue);
 }
 
-.page-container-summary :is(.summary-addon-type-container, .summary-addon-cost-container) {
+.summary-addon-type-container,
+.summary-addon-cost-container {
   gap: 15px;
 }
 
