@@ -63,6 +63,12 @@ function setProperty(element, propertyName, propertyValue) {
 
 const nextBtnElsExceptFirst = Array.from(nextBtnEls).slice(1);
 
+window.addEventListener("load", function () {
+  inputFieldEls.forEach((input) => {
+    input.value = "";
+  });
+});
+
 nextBtnElsExceptFirst.forEach((btn, i) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -154,8 +160,8 @@ nextBtnElsExceptFirst.forEach((btn, i) => {
   });
 });
 
-inputFieldEls.forEach((el) => {
-  if (el.value.trim() === "") {
+inputFieldEls.forEach((input) => {
+  if (input.value.trim() === "") {
     setProperty(stepContainerUl, "pointer-events", "none");
   }
 });
@@ -165,8 +171,8 @@ formEl.addEventListener("submit", function (e) {
 
   let shouldContinue = true;
 
-  inputFieldEls.forEach((el, index) => {
-    if (el.value.trim() === "") {
+  inputFieldEls.forEach((input, index) => {
+    if (input.value.trim() === "") {
       inputFieldErrorEls[index].innerHTML = "This field is required";
       shouldContinue = false;
       setProperty(stepContainerUl, "pointer-events", "none");
@@ -236,12 +242,12 @@ sliderInputEl.addEventListener("click", function () {
 
   if (sliderInputEl.checked) {
     setProperty(sliderToggleEl, "transform", "translateX(15px)");
-    benefitMessageEl.forEach((el) => setProperty(el, "display", "block"));
+    benefitMessageEl.forEach((message) => setProperty(message, "display", "block"));
     planTypePaymentPlan.forEach((el) => (el.innerHTML = "yr"));
     planCostLastDigit.forEach((el) => (el.innerText = "0"));
   } else {
     setProperty(sliderToggleEl, "transform", "translateX(0)");
-    benefitMessageEl.forEach((el) => setProperty(el, "display", "none"));
+    benefitMessageEl.forEach((message) => setProperty(message, "display", "none"));
     planTypePaymentPlan.forEach((el) => (el.innerHTML = "mo"));
     planCostLastDigit.forEach((el) => (el.innerText = ""));
   }
